@@ -10,16 +10,19 @@
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             text-align: center;
             color: white;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            width: 50%;
+            width: 90%;
+            max-width: 500px;
             margin: auto;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
         }
         .question {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
         }
         .options button {
@@ -30,7 +33,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
         }
         .options button:hover {
             background: #ddd;
@@ -45,7 +48,17 @@
         }
         #result {
             margin-top: 20px;
-            font-size: 22px;
+            font-size: 20px;
+        }
+        button.next-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            background: #ffcc00;
         }
     </style>
 </head>
@@ -55,7 +68,7 @@
         <div id="quiz-container">
             <div class="question" id="question"></div>
             <div class="options" id="options"></div>
-            <button onclick="nextQuestion()">अगला</button>
+            <button class="next-btn" onclick="nextQuestion()">अगला</button>
         </div>
         <div id="result" style="display: none;"></div>
     </div>
