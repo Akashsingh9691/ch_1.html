@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ टेस्ट</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            text-align: center;
+            color: white;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .options button:hover {
+            background: #ddd;
+        }
+        .correct {
+            background: green !important;
+            color: white;
+        }
+        .wrong {
+            background: red !important;
+            color: white;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MCQ टेस्ट</h1>
+        <div id="quiz-container">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <button onclick="nextQuestion()">अगला</button>
+        </div>
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "भारत की राजधानी क्या है?", options: ["मुंबई", "कोलकाता", "दिल्ली", "चेन्नई"], answer: 2 },
+            { question: "ताजमहल कहाँ स्थित है?", options: ["दिल्ली", "आगरा", "जयपुर", "वाराणसी"], answer: 1 },
+            { question: "भारत का राष्ट्रीय पशु कौन सा है?", options: ["शेर", "हाथी", "बाघ", "गैंडा"], answer: 2 },
+            { question: "गांधी जी का जन्म कब हुआ था?", options: ["1869", "1872", "1890", "1901"], answer: 0 },
+            { question: "सबसे लंबी नदी कौन सी है?", options: ["गंगा", "यमुना", "ब्रह्मपुत्र", "सिंधु"], answer: 0 },
+            { question: "भारत के प्रथम प्रधानमंत्री कौन थे?", options: ["सरदार पटेल", "लाल बहादुर शास्त्री", "इंदिरा गांधी", "जवाहरलाल नेहरू"], answer: 3 },
+            { question: "भारत में कुल कितने राज्य हैं?", options: ["25", "28", "29", "30"], answer: 1 },
+            { question: "राष्ट्रीय गान कौन सा है?", options: ["वंदे मातरम", "सारे जहां से अच्छा", "जन गण मन", "मेरा भारत महान"], answer: 2 }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            document.getElementById("question").innerText = questions[currentQuestionIndex].question;
+            let optionsContainer = document.getElementById("options");
+            optionsContainer.innerHTML = "";
+            
+            questions[currentQuestionIndex].options.forEach((option, index) => {
+                let button = document.createElement("button");
+                button.innerText = option;
+                button.onclick = () => checkAnswer(index, button);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex, button) {
+            let correctIndex = questions[currentQuestionIndex].answer;
+            if (selectedIndex === correctIndex) {
+                button.classList.add("correct");
+                score++;
+            } else {
+                button.classList.add("wrong");
+            }
+            setTimeout(nextQuestion, 1000);
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById("quiz-container").style.display = "none";
+                document.getElementById("result").innerText = `आपका स्कोर: ${score}/${questions.length}`;
+                document.getElementById("result").style.display = "block";
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
