@@ -3,40 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>અહેવાલ પેજ</title>
+    <title>અહેવાલ પત્ર</title>
     <style>
         body {
             font-family: 'Noto Sans Gujarati', sans-serif;
-            text-align: center;
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            color: white;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
         }
-        .container {
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            margin: auto;
-        }
-        h1 {
-            font-size: 24px;
-        }
-        p {
+        .notebook {
+            width: 90%;
+            max-width: 800px;
+            height: 90vh;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 40px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            line-height: 2.5;
             font-size: 18px;
-            line-height: 1.6;
+        }
+        .notebook::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 2px;
+            height: 100%;
+            background: red;
+        }
+        .notebook .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+        .notebook p {
+            margin: 0;
+            padding-left: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>અહેવાલ</h1>
+    <div class="notebook">
+        <div class="title">અહેવાલ</div>
         <p><strong>વિષય:</strong> શાળાના વાર્ષિકોત્સવ અંગે અહેવાલ</p>
         <p><strong>તારીખ:</strong> ૧૫ ફેબ્રુઆરી, ૨૦૨૫</p>
-        <p>આ વર્ષના શાળાના વાર્ષિકોત્સવ કાર્યક્રમમાં વિવિધ પ્રવૃત્તિઓ યોજાઈ હતી, જેમાં વિદ્યાર્થીઓએ ઉત્સાહભેર ભાગ લીધો. સંસ્કૃતિક કાર્યક્રમો, વક્તૃત્વ સ્પર્ધા અને રમતગમતની સ્પર્ધાઓનું આયોજન કરવામાં આવ્યું હતું. આ કાર્યક્રમની વિશેષતા એ હતી કે વિદ્યાર્થીઓએ વિવિધ પ્રદર્શનો પણ રજૂ કર્યા.</p>
-        <p>આ કાર્યક્રમની સફળતા માટે શિક્ષકો અને વિદ્યાર્થીઓનું યોગદાન પ્રશંસનીય હતું.</p>
+        <p>આ વર્ષે અમારી શાળામાં વાર્ષિકોત્સવ ઉજવાયો, જેમાં વિવિધ સંસ્કૃતિક અને રમતગમતની પ્રવૃત્તિઓ યોજાઈ.</p>
+        <p>વિદ્યાર્થીઓએ ઉત્સાહભેર ભાગ લીધો અને પોતાનું પ્રદર્શન કર્યું. કાર્યક્રમમાં ગાયન, નૃત્ય, વક્તૃત્વ સ્પર્ધા અને રમતગમત જેવી પ્રવૃત્તિઓ હતી.</p>
+        <p>આજે શાળાના દરેક વિદ્યાર્થી માટે એક ખાસ દિવસ રહ્યો, અને બધા ખૂબ આનંદ માણ્યો. અંતે વિજેતાઓને ઈનામો આપવામાં આવ્યા.</p>
+        <p>આવતી વખતે પણ શાળાની વાર્ષિકોત્સવ ઉજવણી વધુ ભવ્ય બનાવવા માટે બધા પ્રયાસ કરશે.</p>
     </div>
 </body>
 </html>
