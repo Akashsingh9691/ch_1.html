@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MCQ Quiz</h2>
+        <div id="quiz-container">
+            <p id="question" class="question"></p>
+            <div id="options" class="options"></div>
+            <button id="next-btn" class="hidden" onclick="nextQuestion()">Next</button>
+        </div>
+        <p id="result" class="hidden"></p>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: 2 },
+            { question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 1 },
+            { question: "What is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], answer: 3 },
+            { question: "Who wrote 'Hamlet'?", options: ["Shakespeare", "Dickens", "Hemingway", "Austen"], answer: 0 },
+            { question: "What is the square root of 64?", options: ["6", "7", "8", "9"], answer: 2 },
+            { question: "What is the chemical symbol for water?", options: ["O2", "H2O", "CO2", "NaCl"], answer: 1 },
+            { question: "Which country is known as the Land of the Rising Sun?", options: ["China", "India", "Japan", "Korea"], answer: 2 },
+            { question: "How many continents are there on Earth?", options: ["5", "6", "7", "8"], answer: 2 },
+            { question: "Who developed the theory of relativity?", options: ["Newton", "Einstein", "Galileo", "Tesla"], answer: 1 },
+            { question: "What is the powerhouse of the cell?", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi Apparatus"], answer: 2 }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            document.getElementById("result").classList.add("hidden");
+            document.getElementById("next-btn").classList.add("hidden");
+            const q = questions[currentQuestion];
+            document.getElementById("question").innerText = q.question;
+            const optionsContainer = document.getElementById("options");
+            optionsContainer.innerHTML = "";
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement("button");
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(index);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            const q = questions[currentQuestion];
+            if (selectedIndex === q.answer) {
+                score++;
+            }
+            document.getElementById("next-btn").classList.remove("hidden");
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById("quiz-container").classList.add("hidden");
+                document.getElementById("result").classList.remove("hidden");
+                document.getElementById("result").innerText = `Your score: ${score} / ${questions.length}`;
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
