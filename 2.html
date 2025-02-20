@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Advanced MCQ Quiz</title>
     <style>
         body {
@@ -12,28 +12,32 @@
             color: white;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            width: 60%;
-            margin: auto;
+            width: 90%;
+            max-width: 400px;
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .question {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 15px;
         }
         .options button {
             display: block;
             width: 100%;
             margin: 8px 0;
-            padding: 12px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
             background: #fff;
             color: #333;
             transition: 0.3s;
@@ -48,10 +52,10 @@
         #next-btn {
             background: #ff5722;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             margin-top: 10px;
             transition: 0.3s;
@@ -63,7 +67,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Advanced MCQ Quiz</h2>
+        <h2>MCQ Quiz</h2>
         <div id="quiz-container">
             <p id="question" class="question"></p>
             <div id="options" class="options"></div>
@@ -78,12 +82,7 @@
             { question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 1 },
             { question: "What is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], answer: 3 },
             { question: "Who wrote 'Hamlet'?", options: ["Shakespeare", "Dickens", "Hemingway", "Austen"], answer: 0 },
-            { question: "What is the square root of 64?", options: ["6", "7", "8", "9"], answer: 2 },
-            { question: "What is the chemical symbol for water?", options: ["O2", "H2O", "CO2", "NaCl"], answer: 1 },
-            { question: "Which country is known as the Land of the Rising Sun?", options: ["China", "India", "Japan", "Korea"], answer: 2 },
-            { question: "How many continents are there on Earth?", options: ["5", "6", "7", "8"], answer: 2 },
-            { question: "Who developed the theory of relativity?", options: ["Newton", "Einstein", "Galileo", "Tesla"], answer: 1 },
-            { question: "What is the powerhouse of the cell?", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi Apparatus"], answer: 2 }
+            { question: "What is the square root of 64?", options: ["6", "7", "8", "9"], answer: 2 }
         ];
 
         let currentQuestion = 0;
