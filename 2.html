@@ -7,57 +7,60 @@
     <style>
         body {
             font-family: 'Noto Sans Gujarati', sans-serif;
-            background: #f9f9f9;
-            margin: 0;
-            padding: 0;
+            background: #f3f3f3;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
         }
         .notebook {
             width: 90%;
             max-width: 800px;
+            height: 90vh;
             background: white;
             padding: 40px;
             border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            line-height: 1.6;
+            line-height: 2.2;
+            background-image: repeating-linear-gradient(white 0px, white 23px, #b3e5fc 24px);
         }
         .notebook::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 50px;
-            bottom: 0;
             width: 2px;
+            height: 100%;
             background: red;
         }
-        .notebook h1 {
+        .title {
             text-align: center;
+            font-size: 24px;
+            font-weight: bold;
             text-decoration: underline;
             margin-bottom: 20px;
         }
-        .notebook p {
+        p {
             margin: 0;
             padding-left: 70px;
             text-indent: -20px;
         }
-        .notebook .date {
+        .date {
             text-align: right;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="notebook">
-        <h1>અહેવાલ</h1>
+        <div class="title">અહેવાલ</div>
         <p class="date"><strong>તારીખ:</strong> ૨૦ ફેબ્રુઆરી, ૨૦૨૫</p>
         <p><strong>વિષય:</strong> શાળાના વાર્ષિકોત્સવ અંગે અહેવાલ</p>
-        <p>આ વર્ષે, અમારી શાળામાં વાર્ષિકોત્સવનું આયોજન કરવામાં આવ્યું, જેમાં વિદ્યાર્થીઓએ ઉત્સાહપૂર્વક ભાગ લીધો. કાર્યક્રમમાં વિવિધ સાંસ્કૃતિક પ્રવૃત્તિઓ, જેમ કે નૃત્ય, ગીત, અને નાટક રજૂ કરવામાં આવ્યા.</p>
-        <p>રમતગમત સ્પર્ધાઓમાં, વિદ્યાર્થીઓએ વિવિધ રમતોમાં ભાગ લીધો અને તેમની કુશળતા દર્શાવી. આ કાર્યક્રમનો મુખ્ય હેતુ વિદ્યાર્થીઓના સર્વાંગી વિકાસને પ્રોત્સાહિત કરવાનો હતો.</p>
-        <p>કાર્યક્રમના અંતે, વિજેતાઓને ઇનામો આપવામાં આવ્યા અને તમામ શિક્ષકો અને વિદ્યાર્થીઓએ કાર્યક્રમની સફળતા માટે મહેનત કરી.</p>
+        <p>આ વર્ષે અમારી શાળામાં વાર્ષિકોત્સવ યોજાયો, જેમાં વિદ્યાર્થીઓએ ઉત્સાહપૂર્વક ભાગ લીધો. વિવિધ સાંસ્કૃતિક કાર્યક્રમો, રમતગમત અને સ્પર્ધાઓ યોજાઈ.</p>
+        <p>કાર્યક્રમમાં ગીત, નૃત્ય, વક્તૃત્વ અને નાટક જેવી વિવિધ પ્રવૃત્તિઓનો સમાવેશ કરવામાં આવ્યો હતો. વિદ્યાર્થીઓએ પોતાની પ્રતિભાને ઉજાગર કરી.</p>
+        <p>આ સમગ્ર કાર્યક્રમ સફળ બનાવવા માટે શિક્ષકો અને વિદ્યાર્થીઓએ મહેનત કરી. અંતે, વિજેતાઓને ઈનામો આપવામાં આવ્યા.</p>
     </div>
 </body>
 </html>
